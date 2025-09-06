@@ -3,7 +3,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL")
-SECRET_KEY = os.getenv("SECRET_KEY")
 APP_ENV = os.getenv("APP_ENV")
 VERSION = os.getenv("VERSION")
+
+SQLITE_URL = os.getenv("SQLITE_URL")
+
