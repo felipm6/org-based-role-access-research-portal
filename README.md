@@ -13,6 +13,24 @@
    pip install -r requirements.txt
    ```
 
+## Database Setup
+
+1. Create the SQLite database:
+   ```bash
+   python database_setup.py
+   ```
+
+2. Populate with sample data:
+   ```bash
+   python populate_database.py
+   ```
+
+**Test Credentials:**
+- Admin: `admin` / `admin1234`
+- Study Coordinator: `study_coordinator` / `study_coordinator1234`
+- Research Assistant: `research_assistant` / `research_assistant1234`
+- Participant: `participant` / `participant1234`
+
 ## Run Development Server
 
 ```bash

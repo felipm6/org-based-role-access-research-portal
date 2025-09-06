@@ -3,6 +3,12 @@
 .env.local
 .env.*.local
 
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+research_portal.db
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
