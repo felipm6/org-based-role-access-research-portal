@@ -1,8 +1,7 @@
-from time import timezone
 from sqlalchemy import Column, String, DateTime, ForeignKey, Enum as SQLEnum
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
-from datetime import datetime
+from datetime import datetime, timezone
 import enum
 
 Base = declarative_base()
@@ -51,7 +50,7 @@ class Study(Base):
     title = Column(String, nullable=False)
     description = Column(String)
     org_id = Column(String, ForeignKey("organizations.id"), nullable=False)
-    created_at = Column(DateTime, default=datetime.now(timezone.utc))
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     # Relationships
     organization = relationship("Organization", back_populates="studies")
@@ -65,7 +64,7 @@ class Session(Base):
     study_id = Column(String, ForeignKey("studies.id"), nullable=False)
     participant_id = Column(String, ForeignKey("users.id"), nullable=False)
     scheduled_time = Column(DateTime, nullable=False)
-    created_at = Column(DateTime, default=datetime.now(timezone.utc))
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     # Relationships
     study = relationship("Study", back_populates="sessions")
